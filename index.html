@@ -1,0 +1,1109 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Les 18 ans d'Alessandro - 25 juillet</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Poppins", sans-serif;
+      background: #080816;
+      color: white;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(circle at 20% 20%, rgba(255, 0, 128, 0.45), transparent 28%),
+        radial-gradient(circle at 80% 10%, rgba(0, 183, 255, 0.4), transparent 30%),
+        radial-gradient(circle at 50% 90%, rgba(255, 180, 0, 0.35), transparent 35%),
+        linear-gradient(135deg, #080816, #151530 55%, #090914);
+      z-index: -3;
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+      background-size: 60px 60px;
+      mask-image: linear-gradient(to bottom, rgba(0,0,0,0.8), transparent);
+      z-index: -2;
+    }
+
+    .floating-light {
+      position: fixed;
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.08);
+      filter: blur(45px);
+      animation: float 9s ease-in-out infinite alternate;
+      z-index: -1;
+    }
+
+    .light-1 { top: 15%; left: 5%; }
+    .light-2 { bottom: 10%; right: 5%; animation-delay: 2s; }
+
+    @keyframes float {
+      from { transform: translateY(0) scale(1); }
+      to { transform: translateY(-45px) scale(1.15); }
+    }
+
+    header {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+      text-align: center;
+      position: relative;
+    }
+
+    .hero-card {
+      max-width: 1000px;
+      padding: 60px 35px;
+      border: 1px solid rgba(255,255,255,0.16);
+      border-radius: 36px;
+      background: rgba(255,255,255,0.08);
+      backdrop-filter: blur(22px);
+      box-shadow: 0 30px 90px rgba(0,0,0,0.35);
+      animation: fadeUp 1s ease forwards;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 10px 18px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.22);
+      margin-bottom: 22px;
+      font-size: 0.95rem;
+      letter-spacing: 0.5px;
+    }
+
+    h1 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(3rem, 9vw, 7.5rem);
+      line-height: 0.95;
+      margin-bottom: 22px;
+    }
+
+    .hero-card p {
+      max-width: 720px;
+      margin: 0 auto;
+      color: rgba(255,255,255,0.82);
+      font-size: 1.1rem;
+      line-height: 1.7;
+    }
+
+    .hero-info {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 16px;
+      margin-top: 35px;
+    }
+
+    .info-pill {
+      padding: 16px 22px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.11);
+      border: 1px solid rgba(255,255,255,0.16);
+      font-weight: 600;
+    }
+
+    main {
+      width: min(1150px, 92%);
+      margin: 0 auto;
+      padding: 80px 0;
+    }
+
+    section {
+      margin-bottom: 70px;
+      animation: fadeUp 0.9s ease both;
+    }
+
+    .section-title {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(2.2rem, 5vw, 4rem);
+      margin-bottom: 24px;
+      text-align: center;
+    }
+
+    .countdown-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+    }
+
+    .countdown-card, .glass-card {
+      padding: 30px;
+      border-radius: 28px;
+      background: rgba(255,255,255,0.09);
+      border: 1px solid rgba(255,255,255,0.16);
+      backdrop-filter: blur(18px);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+    }
+
+    .countdown-card h3 {
+      margin-bottom: 18px;
+      font-size: 1.25rem;
+    }
+
+    .timer {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+    }
+
+    .time-box {
+      padding: 18px 8px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.12);
+      text-align: center;
+    }
+
+    .time-box strong {
+      display: block;
+      font-size: clamp(1.5rem, 4vw, 2.4rem);
+    }
+
+    .time-box span {
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.65);
+    }
+
+    .info-text {
+      font-size: 1rem;
+      line-height: 1.8;
+      color: rgba(255,255,255,0.82);
+      text-align: center;
+      max-width: 850px;
+      margin: 0 auto;
+    }
+
+    .important {
+      margin-top: 24px;
+      padding: 24px;
+      border-radius: 24px;
+      background: rgba(255, 190, 70, 0.13);
+      border: 1px solid rgba(255, 214, 120, 0.28);
+      color: rgba(255,255,255,0.92);
+      line-height: 1.8;
+    }
+
+    .map-container {
+      overflow: hidden;
+      border-radius: 28px;
+      border: 1px solid rgba(255,255,255,0.18);
+      box-shadow: 0 25px 80px rgba(0,0,0,0.35);
+      height: 420px;
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+      filter: saturate(1.1) contrast(1.05);
+    }
+
+    form {
+      display: grid;
+      gap: 18px;
+      max-width: 620px;
+      margin: 0 auto;
+    }
+
+    label {
+      font-weight: 600;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 16px 18px;
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: 16px;
+      background: rgba(255,255,255,0.11);
+      color: white;
+      outline: none;
+      font-size: 1rem;
+    }
+
+    input::placeholder {
+      color: rgba(255,255,255,0.48);
+    }
+
+    .choice-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .choice {
+      position: relative;
+    }
+
+    .choice input {
+      display: none;
+    }
+
+    .choice span {
+      display: block;
+      text-align: center;
+      padding: 18px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.18);
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    .choice input:checked + span {
+      background: linear-gradient(135deg, #ff4fa3, #7c5cff);
+      transform: translateY(-3px);
+      box-shadow: 0 15px 35px rgba(124,92,255,0.35);
+    }
+
+    button {
+      border: none;
+      padding: 18px 24px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, #ff4fa3, #ffb347);
+      color: white;
+      font-weight: 700;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: 0.3s ease;
+      box-shadow: 0 18px 45px rgba(255,79,163,0.3);
+    }
+
+    button:hover {
+      transform: translateY(-4px) scale(1.02);
+    }
+
+    textarea, input[type="date"] {
+      width: 100%;
+      padding: 16px 18px;
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: 16px;
+      background: rgba(255,255,255,0.11);
+      color: white;
+      outline: none;
+      font-size: 1rem;
+      font-family: "Poppins", sans-serif;
+    }
+
+    textarea {
+      min-height: 110px;
+      resize: vertical;
+    }
+
+    input[type="date"]::-webkit-calendar-picker-indicator {
+      filter: invert(1);
+    }
+
+    .dress-code-section {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .dress-code-section::before {
+      content: "18";
+      position: absolute;
+      right: -10px;
+      top: -50px;
+      font-size: 12rem;
+      font-weight: 800;
+      color: rgba(255,255,255,0.04);
+      pointer-events: none;
+    }
+
+    .dress-highlight {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 24px;
+    }
+
+    .dress-highlight span {
+      display: inline-block;
+      padding: 16px 24px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #ff4fa3, #ffb347);
+      color: white;
+      font-weight: 800;
+      letter-spacing: 0.4px;
+      box-shadow: 0 18px 45px rgba(255,79,163,0.28);
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    .chat-area {
+      margin-top: 35px;
+      padding-top: 28px;
+      border-top: 1px solid rgba(255,255,255,0.14);
+    }
+
+    .chat-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      align-items: center;
+      margin-bottom: 24px;
+    }
+
+    .chat-header h3 {
+      font-size: 1.4rem;
+      margin-bottom: 6px;
+    }
+
+    .chat-header p, .record-status {
+      color: rgba(255,255,255,0.65);
+      font-size: 0.9rem;
+    }
+
+    .secondary-btn, .file-label {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 18px;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,0.18);
+      background: rgba(255,255,255,0.1);
+      color: white;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: none;
+      transition: 0.3s ease;
+    }
+
+    .file-label input {
+      display: none;
+    }
+
+    .media-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .messages {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      height: min(62vh, 520px);
+      overflow-y: auto;
+      padding: 18px;
+      border-radius: 28px;
+      background: rgba(0,0,0,0.28);
+      border: 1px solid rgba(255,255,255,0.12);
+      margin-bottom: 20px;
+      scroll-behavior: smooth;
+    }
+
+    .messages::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    .messages::-webkit-scrollbar-thumb {
+      background: rgba(255,255,255,0.22);
+      border-radius: 999px;
+    }
+
+    .message {
+      width: fit-content;
+      max-width: 78%;
+      padding: 14px 16px;
+      border-radius: 20px 20px 20px 6px;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.12);
+      animation: popIn 0.35s ease;
+      align-self: flex-start;
+    }
+
+    .message.mine {
+      align-self: flex-end;
+      border-radius: 20px 20px 6px 20px;
+      background: linear-gradient(135deg, rgba(255,79,163,0.95), rgba(124,92,255,0.95));
+      box-shadow: 0 16px 35px rgba(124,92,255,0.22);
+    }
+
+    .message strong {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.85);
+    }
+
+    .message p {
+      color: rgba(255,255,255,0.92);
+      line-height: 1.55;
+      margin-bottom: 8px;
+      word-break: break-word;
+    }
+
+    .message small {
+      display: block;
+      margin-top: 8px;
+      color: rgba(255,255,255,0.55);
+      font-size: 0.72rem;
+    }
+
+    .message img, .message video {
+      width: 100%;
+      max-height: 320px;
+      object-fit: cover;
+      border-radius: 14px;
+      margin-top: 8px;
+    }
+
+    .message audio {
+      width: 100%;
+      margin-top: 8px;
+    }
+
+    .chat-form {
+      max-width: none;
+      padding: 14px;
+      border-radius: 24px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+    }
+
+    .drive-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 18px 28px;
+      border-radius: 20px;
+      background: linear-gradient(135deg, #4285F4, #34A853);
+      color: white;
+      text-decoration: none;
+      font-weight: 700;
+      transition: 0.3s ease;
+      box-shadow: 0 20px 45px rgba(52,168,83,0.28);
+    }
+
+    .drive-btn:hover {
+      transform: translateY(-4px) scale(1.03);
+    }
+
+    .guest-list {
+      display: grid;
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .guest-item {
+      padding: 16px 18px;
+      border-radius: 16px;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.14);
+      animation: popIn 0.35s ease;
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+    }
+
+    .guest-item small {
+      color: rgba(255,255,255,0.6);
+    }
+
+    .empty-message {
+      color: rgba(255,255,255,0.62);
+      text-align: center;
+      margin-top: 18px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px 20px 60px;
+      color: rgba(255,255,255,0.58);
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(35px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes popIn {
+      from {
+        opacity: 0;
+        transform: scale(0.95);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    @media (max-width: 650px) {
+      body {
+        font-size: 15px;
+      }
+
+      header {
+        min-height: auto;
+        padding: 28px 14px 40px;
+      }
+
+      main {
+        width: 94%;
+        padding: 40px 0;
+      }
+
+      section {
+        margin-bottom: 38px;
+      }
+
+      .hero-card {
+        padding: 34px 18px;
+        border-radius: 28px;
+      }
+
+      .hero-card p,
+      .info-text,
+      .important {
+        font-size: 0.95rem;
+        line-height: 1.65;
+      }
+
+      .section-title {
+        font-size: 2.15rem;
+      }
+
+      .glass-card,
+      .countdown-card {
+        padding: 22px 16px;
+        border-radius: 24px;
+      }
+
+      .timer {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .choice-row {
+        grid-template-columns: 1fr;
+      }
+
+      .map-container {
+        height: 310px;
+      }
+
+      input[type="text"],
+      input[type="date"],
+      textarea {
+        font-size: 16px;
+        padding: 15px 16px;
+      }
+
+      .chat-header {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .messages {
+        height: 58vh;
+        padding: 12px;
+        border-radius: 22px;
+      }
+
+      .message {
+        max-width: 92%;
+        padding: 13px 14px;
+      }
+
+      .media-row {
+        display: grid;
+        grid-template-columns: 1fr;
+      }
+
+      .secondary-btn,
+      .file-label,
+      button,
+      .drive-btn {
+        width: 100%;
+        min-height: 52px;
+      }
+
+      .dress-code-section::before {
+        font-size: 7rem;
+        top: -25px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="floating-light light-1"></div>
+  <div class="floating-light light-2"></div>
+
+  <header>
+    <div class="hero-card">
+      <div class="badge">Invitation privée</div>
+      <h1>Les 18 ans<br>d’Alessandro</h1>
+      <p>
+        Une soirée spéciale pour fêter mes 18 ans, se retrouver, profiter, discuter, rire et passer un bon moment ensemble.
+        Merci de confirmer ta présence avec le petit formulaire plus bas.
+      </p>
+
+      <div class="hero-info">
+        <div class="info-pill">Samedi 25 juillet</div>
+        <div class="info-pill">20h00 — 02h00</div>
+        <div class="info-pill">Rue Jean Prouvé 47</div>
+        <div class="info-pill">18 ans d’Alessandro</div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <h2 class="section-title">Comptes à rebours</h2>
+      <div class="countdown-grid">
+        <div class="countdown-card">
+          <h3>Jusqu’au 20 juillet</h3>
+          <div class="timer" id="countdown-20"></div>
+        </div>
+
+        <div class="countdown-card">
+          <h3>Jusqu’au jour de la fête — 25 juillet</h3>
+          <div class="timer" id="countdown-25"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="glass-card dress-code-section">
+      <h2 class="section-title">Dress code</h2>
+      <div class="dress-highlight">
+        <span>18 ans, ça se fête bien habillé.</span>
+      </div>
+      <p class="info-text">
+        Pour la soirée, venez dans une tenue propre et stylée. Pas besoin d’être en costume, mais merci d’éviter les joggings, survêtements et tenues trop sportives.
+      </p>
+      <div class="important">
+        Petite règle simple : viens comme si tu voulais être sur les photos de la soirée. Chic, propre, confortable, mais pas en mode canapé.
+      </div>
+    </section>
+
+    <section class="glass-card">
+      <h2 class="section-title">Informations importantes</h2>
+      <p class="info-text">
+        La soirée commence à 20h00 et se termine vers 02h00. Pense à prévoir ton retour à l’avance : transport, parent, ami, taxi ou autre solution sûre.
+      </p>
+
+      <div class="important">
+        Je ne pourrai pas héberger tout le monde. Donc merci de prévoir un moyen de rentrer chez toi après la soirée.
+        Pour les personnes qui habitent vraiment loin, il sera peut-être possible de rester, mais uniquement si vous promettez de rester calmes et de ne pas faire de bruit, car ma mère et ma sœur dormiront sûrement à la maison.
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-title">Lieu du rendez-vous</h2>
+      <div class="map-container">
+        <iframe
+          src="https://www.google.com/maps?q=Rue%20Jean%20Prouv%C3%A9%2047&output=embed"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </section>
+
+    <section class="glass-card">
+      <h2 class="section-title">Tu viens ?</h2>
+      <p class="info-text" style="margin-bottom: 30px;">
+        Confirme juste ta présence pour que je puisse m’organiser au mieux.
+      </p>
+
+      <form id="guest-form">
+        <div>
+          <label for="firstname">Prénom</label>
+          <input type="text" id="firstname" placeholder="Ton prénom" required>
+        </div>
+
+        <div>
+          <label for="lastname">Nom</label>
+          <input type="text" id="lastname" placeholder="Ton nom" required>
+        </div>
+
+        <div>
+          <label>Présence</label>
+          <div class="choice-row">
+            <label class="choice">
+              <input type="radio" name="presence" value="Présent" required>
+              <span>Je serai présent</span>
+            </label>
+
+            <label class="choice">
+              <input type="radio" name="presence" value="Absent" required>
+              <span>Je ne pourrai pas venir</span>
+            </label>
+          </div>
+        </div>
+
+        <button type="submit">Envoyer ma réponse</button>
+      </form>
+    </section>
+
+    <section class="glass-card">
+      <h2 class="section-title">Liste des personnes présentes</h2>
+      <div id="guest-list" class="guest-list"></div>
+      <p id="empty-message" class="empty-message">Aucune personne inscrite pour le moment.</p>
+    </section>
+
+    <section class="glass-card">
+      <h2 class="section-title">Espace invités</h2>
+      <p class="info-text" style="margin-bottom: 30px;">
+        Connecte-toi avec ton nom, ton prénom et ta date de naissance pour accéder au mini tchat de la soirée.
+      </p>
+
+      <form id="login-form" class="login-form">
+        <div>
+          <label for="login-firstname">Prénom</label>
+          <input type="text" id="login-firstname" placeholder="Ton prénom" required>
+        </div>
+
+        <div>
+          <label for="login-lastname">Nom</label>
+          <input type="text" id="login-lastname" placeholder="Ton nom" required>
+        </div>
+
+        <div>
+          <label for="birthdate">Date de naissance</label>
+          <input type="date" id="birthdate" required>
+        </div>
+
+        <button type="submit">Accéder au tchat</button>
+      </form>
+
+      <div id="chat-area" class="chat-area hidden">
+        <div class="chat-header">
+          <div>
+            <h3>Tchat de la soirée</h3>
+            <p id="connected-user">Connecté</p>
+          </div>
+          <button id="logout-btn" type="button" class="secondary-btn">Se déconnecter</button>
+        </div>
+
+        <div id="messages" class="messages"></div>
+
+        <form id="chat-form" class="chat-form">
+          <textarea id="message-text" placeholder="Écris un message..."></textarea>
+
+          <div class="media-row">
+            <label class="file-label">
+              Ajouter photo/vidéo
+              <input type="file" id="media-file" accept="image/*,video/*">
+            </label>
+
+            <button type="button" id="record-btn" class="secondary-btn">Enregistrer vocal</button>
+          </div>
+
+          <p id="record-status" class="record-status">Aucun vocal en cours.</p>
+          <button type="submit">Envoyer</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+      <section class="glass-card">
+      <h2 class="section-title">Album partagé Google Drive</h2>
+      <p class="info-text" style="margin-bottom: 30px;">
+        Important : si tu envoies une photo ou une vidéo dans le tchat, elle s’affiche sur la page, mais elle n’est pas ajoutée automatiquement dans Google Drive.
+        Pour que je puisse tout récupérer après la soirée, merci d’ajouter aussi manuellement tes photos et vidéos dans le dossier Google Drive partagé.
+      </p>
+
+      <div style="display:flex;justify-content:center;">
+        <a href="https://drive.google.com/drive/folders/175ztg6t-ZRM9d6n6jFfxpQf1qotcE5rG?usp=sharing" target="_blank" class="drive-btn">
+          Ouvrir l’album Google Drive
+        </a>
+      </div>
+    </section>
+
+  <footer>
+    Page d’inscription pour l’anniversaire — merci de confirmer ta présence.
+  </footer>
+
+  <script>
+    const countdown20 = document.getElementById("countdown-20");
+    const countdown25 = document.getElementById("countdown-25");
+
+    const target20 = new Date("2026-07-20T00:00:00").getTime();
+    const target25 = new Date("2026-07-25T20:00:00").getTime();
+
+    function createTimerHTML(distance) {
+      if (distance <= 0) {
+        return `<div class="time-box" style="grid-column: 1 / -1;"><strong>0</strong><span>C’est arrivé</span></div>`;
+      }
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((distance / (1000 * 60)) % 60);
+      const seconds = Math.floor((distance / 1000) % 60);
+
+      return `
+        <div class="time-box"><strong>${days}</strong><span>jours</span></div>
+        <div class="time-box"><strong>${hours}</strong><span>heures</span></div>
+        <div class="time-box"><strong>${minutes}</strong><span>minutes</span></div>
+        <div class="time-box"><strong>${seconds}</strong><span>secondes</span></div>
+      `;
+    }
+
+    function updateCountdowns() {
+      const now = new Date().getTime();
+      countdown20.innerHTML = createTimerHTML(target20 - now);
+      countdown25.innerHTML = createTimerHTML(target25 - now);
+    }
+
+    updateCountdowns();
+    setInterval(updateCountdowns, 1000);
+
+    const form = document.getElementById("guest-form");
+    const guestList = document.getElementById("guest-list");
+    const emptyMessage = document.getElementById("empty-message");
+
+    let guests = JSON.parse(localStorage.getItem("birthdayGuests")) || [];
+
+    function saveGuests() {
+      localStorage.setItem("birthdayGuests", JSON.stringify(guests));
+    }
+
+    function renderGuests() {
+      guestList.innerHTML = "";
+      const presentGuests = guests.filter(guest => guest.presence === "Présent");
+
+      if (presentGuests.length === 0) {
+        emptyMessage.style.display = "block";
+        return;
+      }
+
+      emptyMessage.style.display = "none";
+
+      presentGuests.forEach(guest => {
+        const item = document.createElement("div");
+        item.className = "guest-item";
+        item.innerHTML = `
+          <span>${guest.firstname} ${guest.lastname}</span>
+          <small>${guest.presence}</small>
+        `;
+        guestList.appendChild(item);
+      });
+    }
+
+    form.addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      const firstname = document.getElementById("firstname").value.trim();
+      const lastname = document.getElementById("lastname").value.trim();
+      const presence = document.querySelector('input[name="presence"]:checked').value;
+
+      const existingIndex = guests.findIndex(guest =>
+        guest.firstname.toLowerCase() === firstname.toLowerCase() &&
+        guest.lastname.toLowerCase() === lastname.toLowerCase()
+      );
+
+      const guestData = { firstname, lastname, presence };
+
+      if (existingIndex >= 0) {
+        guests[existingIndex] = guestData;
+      } else {
+        guests.push(guestData);
+      }
+
+      saveGuests();
+      renderGuests();
+      form.reset();
+    });
+
+    renderGuests();
+
+    const loginForm = document.getElementById("login-form");
+    const chatArea = document.getElementById("chat-area");
+    const connectedUser = document.getElementById("connected-user");
+    const logoutBtn = document.getElementById("logout-btn");
+    const chatForm = document.getElementById("chat-form");
+    const messagesContainer = document.getElementById("messages");
+    const messageText = document.getElementById("message-text");
+    const mediaFile = document.getElementById("media-file");
+    const recordBtn = document.getElementById("record-btn");
+    const recordStatus = document.getElementById("record-status");
+
+    let currentUser = JSON.parse(localStorage.getItem("birthdayCurrentUser")) || null;
+    let chatMessages = JSON.parse(localStorage.getItem("birthdayChatMessages")) || [];
+    let mediaRecorder = null;
+    let audioChunks = [];
+    let recordedAudio = null;
+
+    function showChatIfConnected() {
+      if (!currentUser) return;
+      loginForm.classList.add("hidden");
+      chatArea.classList.remove("hidden");
+      connectedUser.textContent = `Connecté : ${currentUser.firstname} ${currentUser.lastname}`;
+      renderMessages();
+    }
+
+    function saveMessages() {
+      localStorage.setItem("birthdayChatMessages", JSON.stringify(chatMessages));
+    }
+
+    function renderMessages() {
+      messagesContainer.innerHTML = "";
+
+      if (chatMessages.length === 0) {
+        messagesContainer.innerHTML = `<p class="empty-message">Aucun message pour le moment.</p>`;
+        return;
+      }
+
+      chatMessages.forEach(message => {
+        const item = document.createElement("div");
+        item.className = message.author === `${currentUser?.firstname} ${currentUser?.lastname}` ? "message mine" : "message";
+
+        let mediaHTML = "";
+        if (message.mediaType && message.mediaData) {
+          if (message.mediaType.startsWith("image")) {
+            mediaHTML = `<img src="${message.mediaData}" alt="Photo envoyée">`;
+          } else if (message.mediaType.startsWith("video")) {
+            mediaHTML = `<video src="${message.mediaData}" controls></video>`;
+          } else if (message.mediaType.startsWith("audio")) {
+            mediaHTML = `<audio src="${message.mediaData}" controls></audio>`;
+          }
+        }
+
+        item.innerHTML = `
+          <strong>${message.author}</strong>
+          ${message.text ? `<p>${message.text}</p>` : ""}
+          ${mediaHTML}
+          <small>${message.date}</small>
+        `;
+        messagesContainer.appendChild(item);
+      });
+
+      messagesContainer.scrollTop = messagesContainer.scrollHeight;
+    }
+
+    loginForm.addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      currentUser = {
+        firstname: document.getElementById("login-firstname").value.trim(),
+        lastname: document.getElementById("login-lastname").value.trim(),
+        birthdate: document.getElementById("birthdate").value
+      };
+
+      localStorage.setItem("birthdayCurrentUser", JSON.stringify(currentUser));
+      showChatIfConnected();
+    });
+
+    logoutBtn.addEventListener("click", function() {
+      currentUser = null;
+      localStorage.removeItem("birthdayCurrentUser");
+      chatArea.classList.add("hidden");
+      loginForm.classList.remove("hidden");
+    });
+
+    function readFileAsDataURL(file) {
+      return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onload = () => resolve(reader.result);
+        reader.onerror = reject;
+        reader.readAsDataURL(file);
+      });
+    }
+
+    recordBtn.addEventListener("click", async function() {
+      if (mediaRecorder && mediaRecorder.state === "recording") {
+        mediaRecorder.stop();
+        recordBtn.textContent = "Enregistrer vocal";
+        recordStatus.textContent = "Vocal enregistré. Tu peux l’envoyer.";
+        return;
+      }
+
+      try {
+        const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+        mediaRecorder = new MediaRecorder(stream);
+        audioChunks = [];
+
+        mediaRecorder.ondataavailable = event => {
+          audioChunks.push(event.data);
+        };
+
+        mediaRecorder.onstop = () => {
+          const audioBlob = new Blob(audioChunks, { type: "audio/webm" });
+          const reader = new FileReader();
+          reader.onload = () => {
+            recordedAudio = reader.result;
+          };
+          reader.readAsDataURL(audioBlob);
+          stream.getTracks().forEach(track => track.stop());
+        };
+
+        mediaRecorder.start();
+        recordBtn.textContent = "Arrêter le vocal";
+        recordStatus.textContent = "Enregistrement vocal en cours...";
+      } catch (error) {
+        recordStatus.textContent = "Micro non disponible ou autorisation refusée.";
+      }
+    });
+
+    chatForm.addEventListener("submit", async function(event) {
+      event.preventDefault();
+
+      const text = messageText.value.trim();
+      const file = mediaFile.files[0];
+      let mediaData = null;
+      let mediaType = null;
+
+      if (!text && !file && !recordedAudio) return;
+
+      if (file) {
+        mediaData = await readFileAsDataURL(file);
+        mediaType = file.type;
+      } else if (recordedAudio) {
+        mediaData = recordedAudio;
+        mediaType = "audio/webm";
+      }
+
+      chatMessages.push({
+        author: `${currentUser.firstname} ${currentUser.lastname}`,
+        text,
+        mediaData,
+        mediaType,
+        date: new Date().toLocaleString("fr-CH")
+      });
+
+      saveMessages();
+      renderMessages();
+
+      messageText.value = "";
+      mediaFile.value = "";
+      recordedAudio = null;
+      recordStatus.textContent = "Aucun vocal en cours.";
+    });
+
+    showChatIfConnected();
+  </script>
+</body>
+</html>
