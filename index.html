@@ -294,217 +294,7 @@
       box-shadow: 0 18px 45px rgba(255,79,163,0.3);
     }
 
-    button:hover {
-      transform: translateY(-4px) scale(1.02);
-    }
-
-    textarea, input[type="date"] {
-      width: 100%;
-      padding: 16px 18px;
-      border: 1px solid rgba(255,255,255,0.18);
-      border-radius: 16px;
-      background: rgba(255,255,255,0.11);
-      color: white;
-      outline: none;
-      font-size: 1rem;
-      font-family: "Poppins", sans-serif;
-    }
-
-    textarea {
-      min-height: 110px;
-      resize: vertical;
-    }
-
-    input[type="date"]::-webkit-calendar-picker-indicator {
-      filter: invert(1);
-    }
-
-    .dress-code-section {
-      position: relative;
-      overflow: hidden;
-    }
-
-    .dress-code-section::before {
-      content: "18";
-      position: absolute;
-      right: -10px;
-      top: -50px;
-      font-size: 12rem;
-      font-weight: 800;
-      color: rgba(255,255,255,0.04);
-      pointer-events: none;
-    }
-
-    .dress-highlight {
-      display: flex;
-      justify-content: center;
-      margin-bottom: 24px;
-    }
-
-    .dress-highlight span {
-      display: inline-block;
-      padding: 16px 24px;
-      border-radius: 999px;
-      background: linear-gradient(135deg, #ff4fa3, #ffb347);
-      color: white;
-      font-weight: 800;
-      letter-spacing: 0.4px;
-      box-shadow: 0 18px 45px rgba(255,79,163,0.28);
-    }
-
-    .hidden {
-      display: none !important;
-    }
-
-    .chat-area {
-      margin-top: 35px;
-      padding-top: 28px;
-      border-top: 1px solid rgba(255,255,255,0.14);
-    }
-
-    .chat-header {
-      display: flex;
-      justify-content: space-between;
-      gap: 18px;
-      align-items: center;
-      margin-bottom: 24px;
-    }
-
-    .chat-header h3 {
-      font-size: 1.4rem;
-      margin-bottom: 6px;
-    }
-
-    .chat-header p, .record-status {
-      color: rgba(255,255,255,0.65);
-      font-size: 0.9rem;
-    }
-
-    .secondary-btn, .file-label {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 14px 18px;
-      border-radius: 16px;
-      border: 1px solid rgba(255,255,255,0.18);
-      background: rgba(255,255,255,0.1);
-      color: white;
-      font-weight: 700;
-      cursor: pointer;
-      box-shadow: none;
-      transition: 0.3s ease;
-    }
-
-    .file-label input {
-      display: none;
-    }
-
-    .media-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-
-    .messages {
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-      height: min(62vh, 520px);
-      overflow-y: auto;
-      padding: 18px;
-      border-radius: 28px;
-      background: rgba(0,0,0,0.28);
-      border: 1px solid rgba(255,255,255,0.12);
-      margin-bottom: 20px;
-      scroll-behavior: smooth;
-    }
-
-    .messages::-webkit-scrollbar {
-      width: 8px;
-    }
-
-    .messages::-webkit-scrollbar-thumb {
-      background: rgba(255,255,255,0.22);
-      border-radius: 999px;
-    }
-
-    .message {
-      width: fit-content;
-      max-width: 78%;
-      padding: 14px 16px;
-      border-radius: 20px 20px 20px 6px;
-      background: rgba(255,255,255,0.12);
-      border: 1px solid rgba(255,255,255,0.12);
-      animation: popIn 0.35s ease;
-      align-self: flex-start;
-    }
-
-    .message.mine {
-      align-self: flex-end;
-      border-radius: 20px 20px 6px 20px;
-      background: linear-gradient(135deg, rgba(255,79,163,0.95), rgba(124,92,255,0.95));
-      box-shadow: 0 16px 35px rgba(124,92,255,0.22);
-    }
-
-    .message strong {
-      display: block;
-      margin-bottom: 6px;
-      font-size: 0.85rem;
-      color: rgba(255,255,255,0.85);
-    }
-
-    .message p {
-      color: rgba(255,255,255,0.92);
-      line-height: 1.55;
-      margin-bottom: 8px;
-      word-break: break-word;
-    }
-
-    .message small {
-      display: block;
-      margin-top: 8px;
-      color: rgba(255,255,255,0.55);
-      font-size: 0.72rem;
-    }
-
-    .message img, .message video {
-      width: 100%;
-      max-height: 320px;
-      object-fit: cover;
-      border-radius: 14px;
-      margin-top: 8px;
-    }
-
-    .message audio {
-      width: 100%;
-      margin-top: 8px;
-    }
-
-    .chat-form {
-      max-width: none;
-      padding: 14px;
-      border-radius: 24px;
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.12);
-    }
-
-    .drive-btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 18px 28px;
-      border-radius: 20px;
-      background: linear-gradient(135deg, #4285F4, #34A853);
-      color: white;
-      text-decoration: none;
-      font-weight: 700;
-      transition: 0.3s ease;
-      box-shadow: 0 20px 45px rgba(52,168,83,0.28);
-    }
-
-    .drive-btn:hover {
-      transform: translateY(-4px) scale(1.03);
-    }
+    button:hover {\n      transform: translateY(-4px) scale(1.02);\n    }\n\n    textarea, input[type="date"] {\n      width: 100%;\n      padding: 16px 18px;\n      border: 1px solid rgba(255,255,255,0.18);\n      border-radius: 16px;\n      background: rgba(255,255,255,0.11);\n      color: white;\n      outline: none;\n      font-size: 1rem;\n      font-family: "Poppins", sans-serif;\n    }\n\n    textarea {\n      min-height: 110px;\n      resize: vertical;\n    }\n\n    input[type="date"]::-webkit-calendar-picker-indicator {\n      filter: invert(1);\n    }\n\n    .dress-code-section {\n      position: relative;\n      overflow: hidden;\n    }\n\n    .dress-code-section::before {\n      content: "18";\n      position: absolute;\n      right: -10px;\n      top: -50px;\n      font-size: 12rem;\n      font-weight: 800;\n      color: rgba(255,255,255,0.04);\n      pointer-events: none;\n    }\n\n    .dress-highlight {\n      display: flex;\n      justify-content: center;\n      margin-bottom: 24px;\n    }\n\n    .dress-highlight span {\n      display: inline-block;\n      padding: 16px 24px;\n      border-radius: 999px;\n      background: linear-gradient(135deg, #ff4fa3, #ffb347);\n      color: white;\n      font-weight: 800;\n      letter-spacing: 0.4px;\n      box-shadow: 0 18px 45px rgba(255,79,163,0.28);\n    }\n\n    .hidden {\n      display: none !important;\n    }\n\n    .chat-area {\n      margin-top: 35px;\n      padding-top: 28px;\n      border-top: 1px solid rgba(255,255,255,0.14);\n    }\n\n    .chat-header {\n      display: flex;\n      justify-content: space-between;\n      gap: 18px;\n      align-items: center;\n      margin-bottom: 24px;\n    }\n\n    .chat-header h3 {\n      font-size: 1.4rem;\n      margin-bottom: 6px;\n    }\n\n    .chat-header p, .record-status {\n      color: rgba(255,255,255,0.65);\n      font-size: 0.9rem;\n    }\n\n    .secondary-btn, .file-label {\n      display: inline-flex;\n      align-items: center;\n      justify-content: center;\n      padding: 14px 18px;\n      border-radius: 16px;\n      border: 1px solid rgba(255,255,255,0.18);\n      background: rgba(255,255,255,0.1);\n      color: white;\n      font-weight: 700;\n      cursor: pointer;\n      box-shadow: none;\n      transition: 0.3s ease;\n    }\n\n    .file-label input {\n      display: none;\n    }\n\n    .media-row {\n      display: flex;\n      flex-wrap: wrap;\n      gap: 12px;\n    }\n\n    .messages {\n      display: grid;\n      gap: 14px;\n      max-height: 430px;\n      overflow-y: auto;\n      padding: 16px;\n      border-radius: 22px;\n      background: rgba(0,0,0,0.18);\n      margin-bottom: 20px;\n    }\n\n    .message {\n      padding: 16px;\n      border-radius: 18px;\n      background: rgba(255,255,255,0.1);\n      border: 1px solid rgba(255,255,255,0.12);\n      animation: popIn 0.35s ease;\n    }\n\n    .message strong {\n      display: block;\n      margin-bottom: 8px;\n    }\n\n    .message p {\n      color: rgba(255,255,255,0.82);\n      line-height: 1.6;\n      margin-bottom: 10px;\n    }\n\n    .message img, .message video {\n      width: 100%;\n      max-height: 320px;\n      object-fit: cover;\n      border-radius: 14px;\n      margin-top: 8px;\n    }\n\n    .message audio {\n      width: 100%;\n      margin-top: 8px;\n    }\n\n    .chat-form {\n      max-width: none;\n    }
 
     .guest-list {
       display: grid;
@@ -666,15 +456,14 @@
       <div class="badge">Invitation privée</div>
       <h1>Les 18 ans<br>d’Alessandro</h1>
       <p>
-        Une soirée spéciale pour fêter mes 18 ans, objectif Numéro 1 boire comme un ptn de trou alors ramenez vous 
-        Merci de confirmer ta présence avec le petit formulaire plus bas.
+        Une soirée spéciale pour fêter mes 18 ans, se retrouver, profiter, discuter, rire et passer un bon moment ensemble.\n        Merci de confirmer ta présence avec le petit formulaire plus bas.
       </p>
 
       <div class="hero-info">
         <div class="info-pill">Samedi 25 juillet</div>
         <div class="info-pill">20h00 — 02h00</div>
         <div class="info-pill">Rue Jean Prouvé 47</div>
-        <div class="info-pill">18 ans d’Alessandro</div>
+        <div class="info-pill">18 ans d’Alessandro</div>\n        <div class="info-pill">18 ans d’Alessandro</div>
       </div>
     </div>
   </header>
@@ -684,7 +473,7 @@
       <h2 class="section-title">Comptes à rebours</h2>
       <div class="countdown-grid">
         <div class="countdown-card">
-          <h3>Jusqu’au 20 juillet date officiel </h3>
+          <h3>Jusqu’au 20 juillet</h3>
           <div class="timer" id="countdown-20"></div>
         </div>
 
@@ -695,21 +484,7 @@
       </div>
     </section>
 
-    <section class="glass-card dress-code-section">
-      <h2 class="section-title">Dress code</h2>
-      <div class="dress-highlight">
-        <span>18 ans, ça se fête bien habillé.</span>
-      </div>
-      <p class="info-text">
-        Pour la soirée, venez dans une tenue propre et stylée. Pas besoin d’être en costume, mais merci d’éviter les joggings, survêtements et tenues trop sportives.
-      </p>
-      <div class="important">
-        Petite règle simple : viens comme si tu voulais être sur les photos de la soirée. Chic, propre, confortable, mais pas en mode canapé.
-      </div>
-    </section>
-
-    <section class="glass-card">
-      <h2 class="section-title">Informations importantes</h2>
+    <section class="glass-card dress-code-section">\n      <h2 class="section-title">Dress code</h2>\n      <div class="dress-highlight">\n        <span>18 ans, ça se fête bien habillé.</span>\n      </div>\n      <p class="info-text">\n        Pour la soirée, venez dans une tenue propre et stylée. Pas besoin d’être en costume, mais merci d’éviter les joggings, survêtements et tenues trop sportives.\n      </p>\n      <div class="important">\n        Petite règle simple : viens comme si tu voulais être sur les photos de la soirée. Chic, propre, confortable, mais pas en mode canapé.\n      </div>\n    </section>\n\n    <section class="glass-card">\n      <h2 class="section-title">Informations importantes</h2>
       <p class="info-text">
         La soirée commence à 20h00 et se termine vers 02h00. Pense à prévoir ton retour à l’avance : transport, parent, ami, taxi ou autre solution sûre.
       </p>
@@ -768,65 +543,10 @@
       </form>
     </section>
 
-    <section class="glass-card">
-      <h2 class="section-title">Liste des personnes présentes</h2>
-      <div id="guest-list" class="guest-list"></div>
-      <p id="empty-message" class="empty-message">Aucune personne inscrite pour le moment.</p>
-    </section>
-
-    <section class="glass-card">
-      <h2 class="section-title">Espace invités</h2>
-      <p class="info-text" style="margin-bottom: 30px;">
-        Connecte-toi avec ton nom, ton prénom et ta date de naissance pour accéder au mini tchat de la soirée.
-      </p>
-
-      <form id="login-form" class="login-form">
-        <div>
-          <label for="login-firstname">Prénom</label>
-          <input type="text" id="login-firstname" placeholder="Ton prénom" required>
-        </div>
-
-        <div>
-          <label for="login-lastname">Nom</label>
-          <input type="text" id="login-lastname" placeholder="Ton nom" required>
-        </div>
-
-        <div>
-          <label for="birthdate">Date de naissance</label>
-          <input type="date" id="birthdate" required>
-        </div>
-
-        <button type="submit">Accéder au tchat</button>
-      </form>
-
-      <div id="chat-area" class="chat-area hidden">
-        <div class="chat-header">
-          <div>
-            <h3>Tchat de la soirée</h3>
-            <p id="connected-user">Connecté</p>
-          </div>
-          <button id="logout-btn" type="button" class="secondary-btn">Se déconnecter</button>
-        </div>
-
-        <div id="messages" class="messages"></div>
-
-        <form id="chat-form" class="chat-form">
+    <section class="glass-card">\n      <h2 class="section-title">Liste des personnes présentes</h2>\n      <div id="guest-list" class="guest-list"></div>\n      <p id="empty-message" class="empty-message">Aucune personne inscrite pour le moment.</p>\n    </section>\n\n    <section class="glass-card">\n      <h2 class="section-title">Espace invités</h2>\n      <p class="info-text" style="margin-bottom: 30px;">\n        Connecte-toi avec ton nom, ton prénom et ta date de naissance pour accéder au tchat texte de la soirée.\n      </p>\n\n      <form id="login-form" class="login-form">\n        <div>\n          <label for="login-firstname">Prénom</label>\n          <input type="text" id="login-firstname" placeholder="Ton prénom" required>\n        </div>\n\n        <div>\n          <label for="login-lastname">Nom</label>\n          <input type="text" id="login-lastname" placeholder="Ton nom" required>\n        </div>\n\n        <div>\n          <label for="birthdate">Date de naissance</label>\n          <input type="date" id="birthdate" required>\n        </div>\n\n        <button type="submit">Accéder au tchat</button>\n      </form>\n\n      <div id="chat-area" class="chat-area hidden">\n        <div class="chat-header">\n          <div>\n            <h3>Tchat de la soirée</h3>\n            <p id="connected-user">Connecté</p>\n          </div>\n          <button id="logout-btn" type="button" class="secondary-btn">Se déconnecter</button>\n        </div>\n\n        <div id="messages" class="messages"></div>\n\n        <form id="chat-form" class="chat-form">
           <textarea id="message-text" placeholder="Écris un message..."></textarea>
-
-          <div class="media-row">
-            <label class="file-label">
-              Ajouter photo/vidéo
-              <input type="file" id="media-file" accept="image/*,video/*">
-            </label>
-
-            <button type="button" id="record-btn" class="secondary-btn">Enregistrer vocal</button>
-          </div>
-
-          <p id="record-status" class="record-status">Aucun vocal en cours.</p>
           <button type="submit">Envoyer</button>
-        </form>
-      </div>
-    </section>
+        </form>\n      </div>\n    </section>
   </main>
 
       <section class="glass-card">
@@ -847,7 +567,33 @@
     Page d’inscription pour l’anniversaire — merci de confirmer ta présence.
   </footer>
 
-  <script>
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-app.js";
+    import {
+      getFirestore,
+      collection,
+      doc,
+      setDoc,
+      addDoc,
+      onSnapshot,
+      query,
+      orderBy,
+      serverTimestamp
+    } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyDaJxzNucjfUFkMwoIz3CO5anjikVQd30I",
+      authDomain: "aless18ans.firebaseapp.com",
+      projectId: "aless18ans",
+      storageBucket: "aless18ans.firebasestorage.app",
+      messagingSenderId: "369478358465",
+      appId: "1:369478358465:web:718b2de4e61f2b15594b40",
+      measurementId: "G-3XDD0E576G"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+
     const countdown20 = document.getElementById("countdown-20");
     const countdown25 = document.getElementById("countdown-25");
 
@@ -885,13 +631,26 @@
     const guestList = document.getElementById("guest-list");
     const emptyMessage = document.getElementById("empty-message");
 
-    let guests = JSON.parse(localStorage.getItem("birthdayGuests")) || [];
+    const loginForm = document.getElementById("login-form");
+    const chatArea = document.getElementById("chat-area");
+    const connectedUser = document.getElementById("connected-user");
+    const logoutBtn = document.getElementById("logout-btn");
+    const chatForm = document.getElementById("chat-form");
+    const messagesContainer = document.getElementById("messages");
+    const messageText = document.getElementById("message-text");
 
-    function saveGuests() {
-      localStorage.setItem("birthdayGuests", JSON.stringify(guests));
+    let currentUser = JSON.parse(localStorage.getItem("birthdayCurrentUser")) || null;
+
+    function normalizeId(firstname, lastname) {
+      return `${firstname}-${lastname}`
+        .toLowerCase()
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .replace(/[^a-z0-9]+/g, "-")
+        .replace(/^-|-$/g, "");
     }
 
-    function renderGuests() {
+    function renderGuestsFromData(guests) {
       guestList.innerHTML = "";
       const presentGuests = guests.filter(guest => guest.presence === "Présent");
 
@@ -913,95 +672,63 @@
       });
     }
 
-    form.addEventListener("submit", function(event) {
+    function renderMessagesFromData(messages) {
+      messagesContainer.innerHTML = "";
+
+      if (messages.length === 0) {
+        messagesContainer.innerHTML = `<p class="empty-message">Aucun message pour le moment.</p>`;
+        return;
+      }
+
+      messages.forEach(message => {
+        const item = document.createElement("div");
+        item.className = message.author === `${currentUser?.firstname} ${currentUser?.lastname}` ? "message mine" : "message";
+        item.innerHTML = `
+          <strong>${message.author || "Invité"}</strong>
+          ${message.text ? `<p>${message.text}</p>` : ""}
+          <small>${message.createdAtText || ""}</small>
+        `;
+        messagesContainer.appendChild(item);
+      });
+
+      messagesContainer.scrollTop = messagesContainer.scrollHeight;
+    }
+
+    const guestsQuery = query(collection(db, "birthday-guests"), orderBy("lastname", "asc"));
+    onSnapshot(guestsQuery, snapshot => {
+      const guests = snapshot.docs.map(document => document.data());
+      renderGuestsFromData(guests);
+    });
+
+    const messagesQuery = query(collection(db, "birthday-chat"), orderBy("createdAt", "asc"));
+    onSnapshot(messagesQuery, snapshot => {
+      const messages = snapshot.docs.map(document => document.data());
+      renderMessagesFromData(messages);
+    });
+
+    form.addEventListener("submit", async function(event) {
       event.preventDefault();
 
       const firstname = document.getElementById("firstname").value.trim();
       const lastname = document.getElementById("lastname").value.trim();
       const presence = document.querySelector('input[name="presence"]:checked').value;
+      const guestId = normalizeId(firstname, lastname);
 
-      const existingIndex = guests.findIndex(guest =>
-        guest.firstname.toLowerCase() === firstname.toLowerCase() &&
-        guest.lastname.toLowerCase() === lastname.toLowerCase()
-      );
+      await setDoc(doc(db, "birthday-guests", guestId), {
+        firstname,
+        lastname,
+        presence,
+        updatedAt: serverTimestamp()
+      });
 
-      const guestData = { firstname, lastname, presence };
-
-      if (existingIndex >= 0) {
-        guests[existingIndex] = guestData;
-      } else {
-        guests.push(guestData);
-      }
-
-      saveGuests();
-      renderGuests();
       form.reset();
     });
-
-    renderGuests();
-
-    const loginForm = document.getElementById("login-form");
-    const chatArea = document.getElementById("chat-area");
-    const connectedUser = document.getElementById("connected-user");
-    const logoutBtn = document.getElementById("logout-btn");
-    const chatForm = document.getElementById("chat-form");
-    const messagesContainer = document.getElementById("messages");
-    const messageText = document.getElementById("message-text");
-    const mediaFile = document.getElementById("media-file");
-    const recordBtn = document.getElementById("record-btn");
-    const recordStatus = document.getElementById("record-status");
-
-    let currentUser = JSON.parse(localStorage.getItem("birthdayCurrentUser")) || null;
-    let chatMessages = JSON.parse(localStorage.getItem("birthdayChatMessages")) || [];
-    let mediaRecorder = null;
-    let audioChunks = [];
-    let recordedAudio = null;
 
     function showChatIfConnected() {
       if (!currentUser) return;
       loginForm.classList.add("hidden");
       chatArea.classList.remove("hidden");
       connectedUser.textContent = `Connecté : ${currentUser.firstname} ${currentUser.lastname}`;
-      renderMessages();
-    }
-
-    function saveMessages() {
-      localStorage.setItem("birthdayChatMessages", JSON.stringify(chatMessages));
-    }
-
-    function renderMessages() {
-      messagesContainer.innerHTML = "";
-
-      if (chatMessages.length === 0) {
-        messagesContainer.innerHTML = `<p class="empty-message">Aucun message pour le moment.</p>`;
-        return;
-      }
-
-      chatMessages.forEach(message => {
-        const item = document.createElement("div");
-        item.className = message.author === `${currentUser?.firstname} ${currentUser?.lastname}` ? "message mine" : "message";
-
-        let mediaHTML = "";
-        if (message.mediaType && message.mediaData) {
-          if (message.mediaType.startsWith("image")) {
-            mediaHTML = `<img src="${message.mediaData}" alt="Photo envoyée">`;
-          } else if (message.mediaType.startsWith("video")) {
-            mediaHTML = `<video src="${message.mediaData}" controls></video>`;
-          } else if (message.mediaType.startsWith("audio")) {
-            mediaHTML = `<audio src="${message.mediaData}" controls></audio>`;
-          }
-        }
-
-        item.innerHTML = `
-          <strong>${message.author}</strong>
-          ${message.text ? `<p>${message.text}</p>` : ""}
-          ${mediaHTML}
-          <small>${message.date}</small>
-        `;
-        messagesContainer.appendChild(item);
-      });
-
-      messagesContainer.scrollTop = messagesContainer.scrollHeight;
     }
 
     loginForm.addEventListener("submit", function(event) {
@@ -1024,83 +751,25 @@
       loginForm.classList.remove("hidden");
     });
 
-    function readFileAsDataURL(file) {
-      return new Promise((resolve, reject) => {
-        const reader = new FileReader();
-        reader.onload = () => resolve(reader.result);
-        reader.onerror = reject;
-        reader.readAsDataURL(file);
-      });
-    }
-
-    recordBtn.addEventListener("click", async function() {
-      if (mediaRecorder && mediaRecorder.state === "recording") {
-        mediaRecorder.stop();
-        recordBtn.textContent = "Enregistrer vocal";
-        recordStatus.textContent = "Vocal enregistré. Tu peux l’envoyer.";
-        return;
-      }
-
-      try {
-        const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
-        mediaRecorder = new MediaRecorder(stream);
-        audioChunks = [];
-
-        mediaRecorder.ondataavailable = event => {
-          audioChunks.push(event.data);
-        };
-
-        mediaRecorder.onstop = () => {
-          const audioBlob = new Blob(audioChunks, { type: "audio/webm" });
-          const reader = new FileReader();
-          reader.onload = () => {
-            recordedAudio = reader.result;
-          };
-          reader.readAsDataURL(audioBlob);
-          stream.getTracks().forEach(track => track.stop());
-        };
-
-        mediaRecorder.start();
-        recordBtn.textContent = "Arrêter le vocal";
-        recordStatus.textContent = "Enregistrement vocal en cours...";
-      } catch (error) {
-        recordStatus.textContent = "Micro non disponible ou autorisation refusée.";
-      }
-    });
-
     chatForm.addEventListener("submit", async function(event) {
       event.preventDefault();
 
-      const text = messageText.value.trim();
-      const file = mediaFile.files[0];
-      let mediaData = null;
-      let mediaType = null;
-
-      if (!text && !file && !recordedAudio) return;
-
-      if (file) {
-        mediaData = await readFileAsDataURL(file);
-        mediaType = file.type;
-      } else if (recordedAudio) {
-        mediaData = recordedAudio;
-        mediaType = "audio/webm";
+      if (!currentUser) {
+        alert("Connecte-toi avant d’envoyer un message.");
+        return;
       }
 
-      chatMessages.push({
+      const text = messageText.value.trim();
+      if (!text) return;
+
+      await addDoc(collection(db, "birthday-chat"), {
         author: `${currentUser.firstname} ${currentUser.lastname}`,
         text,
-        mediaData,
-        mediaType,
-        date: new Date().toLocaleString("fr-CH")
+        createdAt: serverTimestamp(),
+        createdAtText: new Date().toLocaleString("fr-CH")
       });
 
-      saveMessages();
-      renderMessages();
-
       messageText.value = "";
-      mediaFile.value = "";
-      recordedAudio = null;
-      recordStatus.textContent = "Aucun vocal en cours.";
     });
 
     showChatIfConnected();
