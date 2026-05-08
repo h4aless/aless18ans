@@ -876,13 +876,52 @@
           updatedAt: serverTimestamp()
         });
 
+        localStorage.setItem(
+          "birthdayGuestSubmitted",
+          JSON.stringify({ firstname, lastname, presence })
+        );
+
         form.reset();
-        showStatus(guestStatus, "Réponse enregistrée.", "success");
+        form.classList.add("hidden");
+        guestStatus.classList.remove("hidden");
+        showStatus(
+          guestStatus,
+          `Merci ${firstname}, ta présence a bien été enregistrée.`,
+          "success"
+        );
       } catch (error) {
         console.error("Erreur envoi présence :", error);
         showStatus(guestStatus, getFriendlyFirebaseError(error), "error");
       } finally {
         guestSubmit.disabled = false;
+      }
+    }
+
+    function checkGuestAlreadySubmitted() {
+      const savedGuest = JSON.parse(localStorage.getItem("birthdayGuestSubmitted"));
+
+      if (savedGuest) {
+        form.classList.add("hidden");
+        guestStatus.classList.remove("hidden");
+        showStatus(
+          guestStatus,
+          `Présence enregistrée pour ${savedGuest.firstname} ${savedGuest.lastname}.`,
+          "success"
+        );
+      }
+    }
+
+    function checkGuestAlreadySubmitted() {
+      const savedGuest = JSON.parse(localStorage.getItem("birthdayGuestSubmitted"));
+
+      if (savedGuest) {
+        form.classList.add("hidden");
+        guestStatus.classList.remove("hidden");
+        showStatus(
+          guestStatus,
+          `Présence enregistrée pour ${savedGuest.firstname} ${savedGuest.lastname}.`,
+          "success"
+        );
       }
     }
 
@@ -962,6 +1001,8 @@
     logoutBtn.addEventListener("click", logoutFromChat);
     chatForm.addEventListener("submit", submitChatMessage);
 
+    checkGuestAlreadySubmitted();
+    checkGuestAlreadySubmitted();
     startRealtimeGuests();
     startRealtimeMessages();
     showChatIfConnected();
