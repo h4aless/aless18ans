@@ -649,129 +649,17 @@
     Page d’inscription pour l’anniversaire — merci de confirmer ta présence.
   </footer>
 
-  <script type="module">
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-app.js";
-    import {
-      getFirestore,
-      collection,
-      doc,
-      setDoc,
-      addDoc,
-      onSnapshot,
-      query,
-      orderBy,
-      serverTimestamp,
-      enableIndexedDbPersistence
-    } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js";
+  <script>
+    function initCountdowns() {
+      const countdown20 = document.getElementById("countdown-20");
+      const countdown25 = document.getElementById("countdown-25");
 
-    const firebaseConfig = {
-      apiKey: "AIzaSyDaJxzNucjfUFkMwoIz3CO5anjikVQd30I",
-      authDomain: "aless18ans.firebaseapp.com",
-      projectId: "aless18ans",
-      storageBucket: "aless18ans.firebasestorage.app",
-      messagingSenderId: "369478358465",
-      appId: "1:369478358465:web:718b2de4e61f2b15594b40",
-      measurementId: "G-3XDD0E576G"
-    };
+      if (!countdown20 || !countdown25) return;
 
-    const app = initializeApp(firebaseConfig);
-    const db = getFirestore(app);
+      const target20 = new Date("2026-07-20T00:00:00").getTime();
+      const target25 = new Date("2026-07-25T20:00:00").getTime();
 
-    enableIndexedDbPersistence(db).catch(() => {
-      console.info("Persistance locale Firestore non activée. Ce n’est pas bloquant.");
-    });
-
-    const countdown20 = document.getElementById("countdown-20");
-    const countdown25 = document.getElementById("countdown-25");
-    const form = document.getElementById("guest-form");
-    const guestList = document.getElementById("guest-list");
-    const emptyMessage = document.getElementById("empty-message");
-    const guestStatus = document.getElementById("guest-status");
-    const guestSubmit = document.getElementById("guest-submit");
-    const loginForm = document.getElementById("login-form");
-    const chatArea = document.getElementById("chat-area");
-    const connectedUser = document.getElementById("connected-user");
-    const logoutBtn = document.getElementById("logout-btn");
-    const chatForm = document.getElementById("chat-form");
-    const messagesContainer = document.getElementById("messages");
-    const messageText = document.getElementById("message-text");
-    const messageStatus = document.getElementById("message-status");
-    const messageSubmit = document.getElementById("message-submit");
-
-    const target20 = new Date("2026-07-20T00:00:00").getTime();
-    const target25 = new Date("2026-07-25T20:00:00").getTime();
-
-    let currentUser = JSON.parse(localStorage.getItem("birthdayCurrentUser")) || null;
-
-    function escapeHTML(value) {
-      return String(value || "")
-        .replaceAll("&", "&amp;")
-        .replaceAll("<", "&lt;")
-        .replaceAll(">", "&gt;")
-        .replaceAll('"', "&quot;")
-        .replaceAll("'", "&#039;");
-    }
-
-    function normalizeId(firstname, lastname) {
-      return `${firstname}-${lastname}`
-        .toLowerCase()
-        .normalize("NFD")
-        .replace(/[\u0300-\u036f]/g, "")
-        .replace(/[^a-z0-9]+/g, "-")
-        .replace(/^-|-$/g, "") || `invite-${Date.now()}`;
-    }
-
-    function showStatus(element, message, type = "") {
-      element.textContent = message;
-      element.className = type ? `empty-message ${type}` : "empty-message";
-    }
-
-    function getFriendlyFirebaseError(error) {
-      const code = error?.code || "unknown";
-
-      if (code === "permission-denied") {
-        return "Accès refusé par Firebase. Va dans Firestore Database → Rules et autorise temporairement read/write pour tester.";
-      }
-
-      if (code === "failed-precondition") {
-        return "Firestore demande une configuration supplémentaire, souvent un index ou l’activation de la base de données.";
-      }
-
-      if (code === "unavailable") {
-        return "Firestore est momentanément indisponible ou la connexion Internet est instable.";
-      }
-
-      if (code === "not-found") {
-        return "Firestore Database n’est probablement pas encore activé dans Firebase.";
-      }
-
-      return `Erreur Firebase : ${code}. Regarde aussi la console du navigateur.`;
-    }
-
-    function createTimerHTML(distance) {
-      if (distance <= 0) {
-        return `<div class="time-box" style="grid-column: 1 / -1;"><strong>0</strong><span>C’est arrivé</span></div>`;
-      }
-
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((distance / (1000 * 60 * 60)) % 24);
-      const minutes = Math.floor((distance / (1000 * 60)) % 60);
-      const seconds = Math.floor((distance / 1000) % 60);
-
-      return `
-        <div class="time-box"><strong>${days}</strong><span>jours</span></div>
-        <div class="time-box"><strong>${hours}</strong><span>heures</span></div>
-        <div class="time-box"><strong>${minutes}</strong><span>minutes</span></div>
-        <div class="time-box"><strong>${seconds}</strong><span>secondes</span></div>
-      `;
-    }
-
-    function updateCountdowns() {
-      const now = Date.now();
-      countdown20.innerHTML = createTimerHTML(target20 - now);
-      countdown25.innerHTML = createTimerHTML(target25 - now);
-    }
-
+  
     function renderGuestsFromData(guests) {
       guestList.innerHTML = "";
       const presentGuests = guests.filter(guest => guest.presence === "Présent");
@@ -884,6 +772,7 @@
         form.reset();
         form.classList.add("hidden");
         guestStatus.classList.remove("hidden");
+
         showStatus(
           guestStatus,
           `Merci ${firstname}, ta présence a bien été enregistrée.`,
@@ -894,20 +783,6 @@
         showStatus(guestStatus, getFriendlyFirebaseError(error), "error");
       } finally {
         guestSubmit.disabled = false;
-      }
-    }
-
-    function checkGuestAlreadySubmitted() {
-      const savedGuest = JSON.parse(localStorage.getItem("birthdayGuestSubmitted"));
-
-      if (savedGuest) {
-        form.classList.add("hidden");
-        guestStatus.classList.remove("hidden");
-        showStatus(
-          guestStatus,
-          `Présence enregistrée pour ${savedGuest.firstname} ${savedGuest.lastname}.`,
-          "success"
-        );
       }
     }
 
@@ -993,15 +868,11 @@
       console.info("Tests de base terminés.");
     }
 
-    updateCountdowns();
-    setInterval(updateCountdowns, 1000);
-
     form.addEventListener("submit", submitGuestResponse);
     loginForm.addEventListener("submit", loginToChat);
     logoutBtn.addEventListener("click", logoutFromChat);
     chatForm.addEventListener("submit", submitChatMessage);
 
-    checkGuestAlreadySubmitted();
     checkGuestAlreadySubmitted();
     startRealtimeGuests();
     startRealtimeMessages();
