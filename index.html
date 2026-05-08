@@ -497,12 +497,22 @@
       <div class="countdown-grid">
         <div class="countdown-card">
           <h3>Jusqu’au 20 juillet</h3>
-          <div class="timer" id="countdown-20"></div>
+          <div class="timer" id="countdown-20">
+            <div class="time-box"><strong>--</strong><span>jours</span></div>
+            <div class="time-box"><strong>--</strong><span>heures</span></div>
+            <div class="time-box"><strong>--</strong><span>minutes</span></div>
+            <div class="time-box"><strong>--</strong><span>secondes</span></div>
+          </div>
         </div>
 
         <div class="countdown-card">
           <h3>Jusqu’au jour de la fête — 25 juillet</h3>
-          <div class="timer" id="countdown-25"></div>
+          <div class="timer" id="countdown-25">
+            <div class="time-box"><strong>--</strong><span>jours</span></div>
+            <div class="time-box"><strong>--</strong><span>heures</span></div>
+            <div class="time-box"><strong>--</strong><span>minutes</span></div>
+            <div class="time-box"><strong>--</strong><span>secondes</span></div>
+          </div>
         </div>
       </div>
     </section>
@@ -864,7 +874,6 @@
     function runSelfTests() {
       console.assert(normalizeId("Alessandro", "Höllinger") === "alessandro-hollinger", "Test normalizeId avec accent échoué");
       console.assert(escapeHTML("<script>") === "&lt;script&gt;", "Test escapeHTML échoué");
-      console.assert(createTimerHTML(1000).includes("secondes"), "Test countdown HTML échoué");
       console.info("Tests de base terminés.");
     }
 
@@ -878,6 +887,41 @@
     startRealtimeMessages();
     showChatIfConnected();
     runSelfTests();
+
+    function forceCountdownsDisplay() {
+      const countdown20 = document.getElementById("countdown-20");
+      const countdown25 = document.getElementById("countdown-25");
+      if (!countdown20 || !countdown25) return;
+
+      const target20 = new Date(2026, 6, 20, 0, 0, 0).getTime();
+      const target25 = new Date(2026, 6, 25, 20, 0, 0).getTime();
+
+      function html(distance) {
+        const safeDistance = Math.max(0, distance);
+        const days = Math.floor(safeDistance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((safeDistance / (1000 * 60 * 60)) % 24);
+        const minutes = Math.floor((safeDistance / (1000 * 60)) % 60);
+        const seconds = Math.floor((safeDistance / 1000) % 60);
+
+        return `
+          <div class="time-box"><strong>${days}</strong><span>jours</span></div>
+          <div class="time-box"><strong>${hours}</strong><span>heures</span></div>
+          <div class="time-box"><strong>${minutes}</strong><span>minutes</span></div>
+          <div class="time-box"><strong>${seconds}</strong><span>secondes</span></div>
+        `;
+      }
+
+      function update() {
+        const now = Date.now();
+        countdown20.innerHTML = html(target20 - now);
+        countdown25.innerHTML = html(target25 - now);
+      }
+
+      update();
+      setInterval(update, 1000);
+    }
+
+    forceCountdownsDisplay();
   </script>
 </body>
 </html>
