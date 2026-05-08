@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Les 18 ans d'Alessandro - 25 juillet</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -158,7 +159,10 @@
       box-shadow: 0 20px 60px rgba(0,0,0,0.25);
     }
 
-    .countdown-card h3 { margin-bottom: 18px; font-size: 1.25rem; }
+    .countdown-card h3 {
+      margin-bottom: 18px;
+      font-size: 1.25rem;
+    }
 
     .timer {
       display: grid;
@@ -173,8 +177,15 @@
       text-align: center;
     }
 
-    .time-box strong { display: block; font-size: clamp(1.5rem, 4vw, 2.4rem); }
-    .time-box span { font-size: 0.75rem; color: rgba(255,255,255,0.65); }
+    .time-box strong {
+      display: block;
+      font-size: clamp(1.5rem, 4vw, 2.4rem);
+    }
+
+    .time-box span {
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.65);
+    }
 
     .info-text {
       font-size: 1rem;
@@ -185,7 +196,7 @@
       margin: 0 auto;
     }
 
-    .important, .status-box {
+    .important {
       margin-top: 24px;
       padding: 24px;
       border-radius: 24px;
@@ -193,16 +204,6 @@
       border: 1px solid rgba(255, 214, 120, 0.28);
       color: rgba(255,255,255,0.92);
       line-height: 1.8;
-    }
-
-    .status-box.error {
-      background: rgba(255, 65, 95, 0.14);
-      border-color: rgba(255, 110, 130, 0.35);
-    }
-
-    .status-box.success {
-      background: rgba(60, 220, 140, 0.12);
-      border-color: rgba(90, 240, 160, 0.3);
     }
 
     .map-container {
@@ -213,7 +214,12 @@
       height: 420px;
     }
 
-    iframe { width: 100%; height: 100%; border: 0; filter: saturate(1.1) contrast(1.05); }
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+      filter: saturate(1.1) contrast(1.05);
+    }
 
     form {
       display: grid;
@@ -236,9 +242,18 @@
       font-family: "Poppins", sans-serif;
     }
 
-    input::placeholder, textarea::placeholder { color: rgba(255,255,255,0.48); }
-    textarea { min-height: 110px; resize: vertical; }
-    input[type="date"]::-webkit-calendar-picker-indicator { filter: invert(1); }
+    input::placeholder, textarea::placeholder {
+      color: rgba(255,255,255,0.48);
+    }
+
+    textarea {
+      min-height: 110px;
+      resize: vertical;
+    }
+
+    input[type="date"]::-webkit-calendar-picker-indicator {
+      filter: invert(1);
+    }
 
     .choice-row {
       display: grid;
@@ -283,10 +298,20 @@
       justify-content: center;
     }
 
-    button:hover, .drive-btn:hover { transform: translateY(-4px) scale(1.02); }
-    button:disabled { opacity: 0.55; cursor: not-allowed; transform: none; }
+    button:hover, .drive-btn:hover {
+      transform: translateY(-4px) scale(1.02);
+    }
 
-    .dress-code-section { position: relative; overflow: hidden; }
+    button:disabled {
+      opacity: 0.55;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .dress-code-section {
+      position: relative;
+      overflow: hidden;
+    }
 
     .dress-code-section::before {
       content: "18";
@@ -299,7 +324,11 @@
       pointer-events: none;
     }
 
-    .dress-highlight { display: flex; justify-content: center; margin-bottom: 24px; }
+    .dress-highlight {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 24px;
+    }
 
     .dress-highlight span {
       display: inline-block;
@@ -328,8 +357,15 @@
       margin-bottom: 24px;
     }
 
-    .chat-header h3 { font-size: 1.4rem; margin-bottom: 6px; }
-    .chat-header p { color: rgba(255,255,255,0.65); font-size: 0.9rem; }
+    .chat-header h3 {
+      font-size: 1.4rem;
+      margin-bottom: 6px;
+    }
+
+    .chat-header p {
+      color: rgba(255,255,255,0.65);
+      font-size: 0.9rem;
+    }
 
     .secondary-btn {
       display: inline-flex;
@@ -361,7 +397,10 @@
     }
 
     .messages::-webkit-scrollbar { width: 8px; }
-    .messages::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.22); border-radius: 999px; }
+    .messages::-webkit-scrollbar-thumb {
+      background: rgba(255,255,255,0.22);
+      border-radius: 999px;
+    }
 
     .message {
       width: fit-content;
@@ -416,7 +455,11 @@
       box-shadow: 0 20px 45px rgba(52,168,83,0.28);
     }
 
-    .guest-list { display: grid; gap: 12px; margin-top: 24px; }
+    .guest-list {
+      display: grid;
+      gap: 12px;
+      margin-top: 24px;
+    }
 
     .guest-item {
       padding: 16px 18px;
@@ -429,8 +472,23 @@
       gap: 15px;
     }
 
-    .guest-item small { color: rgba(255,255,255,0.6); }
-    .empty-message { color: rgba(255,255,255,0.62); text-align: center; margin-top: 18px; }
+    .guest-item small {
+      color: rgba(255,255,255,0.6);
+    }
+
+    .empty-message {
+      color: rgba(255,255,255,0.62);
+      text-align: center;
+      margin-top: 18px;
+    }
+
+    .empty-message.success {
+      color: #9fffc2;
+    }
+
+    .empty-message.error {
+      color: #ff9bad;
+    }
 
     footer {
       text-align: center;
@@ -454,7 +512,7 @@
       main { width: 94%; padding: 40px 0; }
       section { margin-bottom: 38px; }
       .hero-card { padding: 34px 18px; border-radius: 28px; }
-      .hero-card p, .info-text, .important, .status-box { font-size: 0.95rem; line-height: 1.65; }
+      .hero-card p, .info-text, .important { font-size: 0.95rem; line-height: 1.65; }
       .section-title { font-size: 2.15rem; }
       .glass-card, .countdown-card { padding: 22px 16px; border-radius: 24px; }
       .timer { grid-template-columns: repeat(2, 1fr); }
@@ -659,17 +717,130 @@
     Page d’inscription pour l’anniversaire — merci de confirmer ta présence.
   </footer>
 
+  <!-- Script indépendant pour les comptes à rebours. Firebase ne peut pas le bloquer. -->
   <script>
-    function initCountdowns() {
-      const countdown20 = document.getElementById("countdown-20");
-      const countdown25 = document.getElementById("countdown-25");
+    const countdown20 = document.getElementById("countdown-20");
+    const countdown25 = document.getElementById("countdown-25");
 
-      if (!countdown20 || !countdown25) return;
+    const target20 = new Date(2026, 6, 20, 0, 0, 0).getTime();
+    const target25 = new Date(2026, 6, 25, 20, 0, 0).getTime();
 
-      const target20 = new Date("2026-07-20T00:00:00").getTime();
-      const target25 = new Date("2026-07-25T20:00:00").getTime();
+    function updateCountdown(element, target) {
+      const distance = Math.max(0, target - Date.now());
 
-  
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((distance / (1000 * 60)) % 60);
+      const seconds = Math.floor((distance / 1000) % 60);
+
+      element.innerHTML = `
+        <div class="time-box"><strong>${days}</strong><span>jours</span></div>
+        <div class="time-box"><strong>${hours}</strong><span>heures</span></div>
+        <div class="time-box"><strong>${minutes}</strong><span>minutes</span></div>
+        <div class="time-box"><strong>${seconds}</strong><span>secondes</span></div>
+      `;
+    }
+
+    function updateAllCountdowns() {
+      updateCountdown(countdown20, target20);
+      updateCountdown(countdown25, target25);
+    }
+
+    updateAllCountdowns();
+    setInterval(updateAllCountdowns, 1000);
+  </script>
+
+  <!-- Script Firebase : présences + tchat texte en temps réel. -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-app.js";
+    import {
+      getFirestore,
+      collection,
+      doc,
+      setDoc,
+      addDoc,
+      onSnapshot,
+      query,
+      orderBy,
+      serverTimestamp
+    } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyDaJxzNucjfUFkMwoIz3CO5anjikVQd30I",
+      authDomain: "aless18ans.firebaseapp.com",
+      projectId: "aless18ans",
+      storageBucket: "aless18ans.firebasestorage.app",
+      messagingSenderId: "369478358465",
+      appId: "1:369478358465:web:718b2de4e61f2b15594b40",
+      measurementId: "G-3XDD0E576G"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+
+    const form = document.getElementById("guest-form");
+    const guestList = document.getElementById("guest-list");
+    const emptyMessage = document.getElementById("empty-message");
+    const guestStatus = document.getElementById("guest-status");
+    const guestSubmit = document.getElementById("guest-submit");
+
+    const loginForm = document.getElementById("login-form");
+    const chatArea = document.getElementById("chat-area");
+    const connectedUser = document.getElementById("connected-user");
+    const logoutBtn = document.getElementById("logout-btn");
+    const chatForm = document.getElementById("chat-form");
+    const messagesContainer = document.getElementById("messages");
+    const messageText = document.getElementById("message-text");
+    const messageStatus = document.getElementById("message-status");
+    const messageSubmit = document.getElementById("message-submit");
+
+    let currentUser = JSON.parse(localStorage.getItem("birthdayCurrentUser")) || null;
+
+    function escapeHTML(value) {
+      return String(value || "")
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#039;");
+    }
+
+    function normalizeId(firstname, lastname) {
+      return `${firstname}-${lastname}`
+        .toLowerCase()
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .replace(/[^a-z0-9]+/g, "-")
+        .replace(/^-|-$/g, "") || `invite-${Date.now()}`;
+    }
+
+    function showStatus(element, message, type = "") {
+      element.textContent = message;
+      element.className = type ? `empty-message ${type}` : "empty-message";
+    }
+
+    function getFriendlyFirebaseError(error) {
+      const code = error?.code || "unknown";
+
+      if (code === "permission-denied") {
+        return "Accès refusé par Firebase. Vérifie les règles Firestore.";
+      }
+
+      if (code === "failed-precondition") {
+        return "Firestore demande une configuration supplémentaire, souvent un index ou l’activation de la base de données.";
+      }
+
+      if (code === "unavailable") {
+        return "Firestore est momentanément indisponible ou la connexion Internet est instable.";
+      }
+
+      if (code === "not-found") {
+        return "Firestore Database n’est probablement pas encore activé dans Firebase.";
+      }
+
+      return `Erreur Firebase : ${code}.`;
+    }
+
     function renderGuestsFromData(guests) {
       guestList.innerHTML = "";
       const presentGuests = guests.filter(guest => guest.presence === "Présent");
@@ -726,7 +897,6 @@
           renderGuestsFromData(guests);
         },
         error => {
-          console.error("Erreur Firestore présences :", error);
           emptyMessage.style.display = "block";
           emptyMessage.textContent = getFriendlyFirebaseError(error);
         }
@@ -743,8 +913,7 @@
           renderMessagesFromData(messages);
         },
         error => {
-          console.error("Erreur Firestore tchat :", error);
-          messagesContainer.innerHTML = `<p class="empty-message">${escapeHTML(getFriendlyFirebaseError(error))}</p>`;
+          messagesContainer.innerHTML = `<p class="empty-message error">${escapeHTML(getFriendlyFirebaseError(error))}</p>`;
         }
       );
     }
@@ -760,7 +929,7 @@
         const selectedPresence = document.querySelector('input[name="presence"]:checked');
 
         if (!firstname || !lastname || !selectedPresence) {
-          showStatus(guestStatus, "Merci de remplir tous les champs.");
+          showStatus(guestStatus, "Merci de remplir tous les champs.", "error");
           return;
         }
 
@@ -774,22 +943,11 @@
           updatedAt: serverTimestamp()
         });
 
-        localStorage.setItem(
-          "birthdayGuestSubmitted",
-          JSON.stringify({ firstname, lastname, presence })
-        );
-
+        localStorage.setItem("birthdayGuestSubmitted", JSON.stringify({ firstname, lastname, presence }));
         form.reset();
         form.classList.add("hidden");
-        guestStatus.classList.remove("hidden");
-
-        showStatus(
-          guestStatus,
-          `Merci ${firstname}, ta présence a bien été enregistrée.`,
-          "success"
-        );
+        showStatus(guestStatus, `Merci ${firstname}, ta présence a bien été enregistrée.`, "success");
       } catch (error) {
-        console.error("Erreur envoi présence :", error);
         showStatus(guestStatus, getFriendlyFirebaseError(error), "error");
       } finally {
         guestSubmit.disabled = false;
@@ -801,7 +959,6 @@
 
       if (savedGuest) {
         form.classList.add("hidden");
-        guestStatus.classList.remove("hidden");
         showStatus(
           guestStatus,
           `Présence enregistrée pour ${savedGuest.firstname} ${savedGuest.lastname}.`,
@@ -844,13 +1001,13 @@
 
       try {
         if (!currentUser) {
-          showStatus(messageStatus, "Connecte-toi avant d’envoyer un message.");
+          showStatus(messageStatus, "Connecte-toi avant d’envoyer un message.", "error");
           return;
         }
 
         const text = messageText.value.trim();
         if (!text) {
-          showStatus(messageStatus, "Écris un message avant d’envoyer.");
+          showStatus(messageStatus, "Écris un message avant d’envoyer.", "error");
           return;
         }
 
@@ -864,17 +1021,10 @@
         messageText.value = "";
         showStatus(messageStatus, "Message envoyé.", "success");
       } catch (error) {
-        console.error("Erreur envoi message :", error);
         showStatus(messageStatus, getFriendlyFirebaseError(error), "error");
       } finally {
         messageSubmit.disabled = false;
       }
-    }
-
-    function runSelfTests() {
-      console.assert(normalizeId("Alessandro", "Höllinger") === "alessandro-hollinger", "Test normalizeId avec accent échoué");
-      console.assert(escapeHTML("<script>") === "&lt;script&gt;", "Test escapeHTML échoué");
-      console.info("Tests de base terminés.");
     }
 
     form.addEventListener("submit", submitGuestResponse);
@@ -886,42 +1036,6 @@
     startRealtimeGuests();
     startRealtimeMessages();
     showChatIfConnected();
-    runSelfTests();
-
-    function forceCountdownsDisplay() {
-      const countdown20 = document.getElementById("countdown-20");
-      const countdown25 = document.getElementById("countdown-25");
-      if (!countdown20 || !countdown25) return;
-
-      const target20 = new Date(2026, 6, 20, 0, 0, 0).getTime();
-      const target25 = new Date(2026, 6, 25, 20, 0, 0).getTime();
-
-      function html(distance) {
-        const safeDistance = Math.max(0, distance);
-        const days = Math.floor(safeDistance / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((safeDistance / (1000 * 60 * 60)) % 24);
-        const minutes = Math.floor((safeDistance / (1000 * 60)) % 60);
-        const seconds = Math.floor((safeDistance / 1000) % 60);
-
-        return `
-          <div class="time-box"><strong>${days}</strong><span>jours</span></div>
-          <div class="time-box"><strong>${hours}</strong><span>heures</span></div>
-          <div class="time-box"><strong>${minutes}</strong><span>minutes</span></div>
-          <div class="time-box"><strong>${seconds}</strong><span>secondes</span></div>
-        `;
-      }
-
-      function update() {
-        const now = Date.now();
-        countdown20.innerHTML = html(target20 - now);
-        countdown25.innerHTML = html(target25 - now);
-      }
-
-      update();
-      setInterval(update, 1000);
-    }
-
-    forceCountdownsDisplay();
   </script>
 </body>
 </html>
