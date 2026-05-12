@@ -723,10 +723,10 @@
   <!-- Script indépendant pour les comptes à rebours. Firebase ne peut pas le bloquer. -->
   <script>
     const countdown20 = document.getElementById("countdown-20");
-    const countdown25 = document.getElementById("countdown-25");
+    const countdown18 = document.getElementById("countdown-18");
 
     const target20 = new Date(2026, 6, 20, 0, 0, 0).getTime();
-    const target25 = new Date(2026, 6, 25, 20, 0, 0).getTime();
+    const target25 = new Date(2026, 6, 18, 20, 0, 0).getTime();
 
     function updateCountdown(element, target) {
       const distance = Math.max(0, target - Date.now());
@@ -746,7 +746,7 @@
 
     function updateAllCountdowns() {
       updateCountdown(countdown20, target20);
-      updateCountdown(countdown25, target25);
+      updateCountdown(countdown25, target18);
     }
 
     updateAllCountdowns();
