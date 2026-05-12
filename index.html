@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Les 18 ans d'Alessandro - 18 juillet</title>
+  <title>Les 18 ans d'Alessandro - 25 juillet</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -541,8 +541,8 @@
       </p>
 
       <div class="hero-info">
-        <div class="info-pill">Samedi 18 juillet</div>
-        <div class="info-pill">18h00 — 02h00</div>
+        <div class="info-pill">Samedi 25 juillet</div>
+        <div class="info-pill">20h00 — 02h00</div>
         <div class="info-pill">Rue Jean Prouvé 47</div>
         <div class="info-pill">18 ans d’Alessandro</div>
       </div>
@@ -584,14 +584,14 @@
         Pour la soirée, venez dans une tenue propre et stylée. Pas besoin d’être en costume, mais merci d’éviter les joggings, survêtements et tenues trop sportives.
       </p>
       <div class="important">
-        Petite règle simple : viens comme si tu voulais être sur les photos de la soirée. Chic, propre, confortable, mais pas en mode canapé.sinon dehors 
+        Petite règle simple : viens comme si tu voulais être sur les photos de la soirée. Chic, propre, confortable, mais pas en mode canapé.
       </div>
     </section>
 
     <section class="glass-card">
       <h2 class="section-title">Informations importantes</h2>
       <p class="info-text">
-        La soirée commence à 18h00 et se termine vers 02h00. meme bourré je te dégage Pense à prévoir ton retour à l’avance : transport, parent, ami, taxi ou autre solution sûre.
+        La soirée commence à 20h00 et se termine vers 02h00. Pense à prévoir ton retour à l’avance : transport, parent, ami, taxi ou autre solution sûre.
       </p>
 
       <div class="important">
@@ -604,12 +604,9 @@
       <h2 class="section-title">Lieu du rendez-vous</h2>
       <div class="map-container">
         <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2730.2128107641893!2d7.131024076490043!3d46.819810271128524!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478e6ebedacb9043%3A0x85507259e6ce80bc!2sRue%20Jean%20Prouv%C3%A9%2047%2C%201762%20Givisiez!5e0!3m2!1sfr!2sch!4v1778492834228!5m2!1sfr!2sch" 
-          width="600"
-          height="450" 
-          style="border:0;" 
-          allowfullscreen="" 
-          loading="lazy" 
+          src="https://www.google.com/maps?q=Rue%20Jean%20Prouv%C3%A9%2047&output=embed"
+          allowfullscreen=""
+          loading="lazy"
           referrerpolicy="no-referrer-when-downgrade">
         </iframe>
       </div>
@@ -725,12 +722,14 @@
     const countdown20 = document.getElementById("countdown-20");
     const countdown18 = document.getElementById("countdown-18");
 
+    // Attention : en JavaScript, le mois 6 = juillet.
     const target20 = new Date(2026, 6, 20, 0, 0, 0).getTime();
-    const target25 = new Date(2026, 6, 18, 19, 0, 0).getTime();
+    const target18 = new Date(2026, 6, 18, 19, 0, 0).getTime();
 
     function updateCountdown(element, target) {
-      const distance = Math.max(0, target - Date.now());
+      if (!element) return;
 
+      const distance = Math.max(0, target - Date.now());
       const days = Math.floor(distance / (1000 * 60 * 60 * 24));
       const hours = Math.floor((distance / (1000 * 60 * 60)) % 24);
       const minutes = Math.floor((distance / (1000 * 60)) % 60);
@@ -812,7 +811,7 @@
       return `${firstname}-${lastname}`
         .toLowerCase()
         .normalize("NFD")
-        .replace(/[\u0300-\u036f]/g, "")
+        .replace(/[̀-ͯ]/g, "")
         .replace(/[^a-z0-9]+/g, "-")
         .replace(/^-|-$/g, "") || `invite-${Date.now()}`;
     }
